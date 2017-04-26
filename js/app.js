@@ -1,7 +1,8 @@
-(function() {
+$(document).ready(function(){
   'use strict';
-
+  // console.log('connected');
   var movies = [];
+  console.log(movies);
 
   var renderMovies = function() {
     $('#listings').empty();
@@ -56,5 +57,20 @@
     }
   };
 
-  // ADD YOUR CODE HERE
-})();
+  $('#search' ).click( "click", addMovie);
+
+  function addMovie(movies) {
+
+    console.log("clicked");
+    $.getJSON('')
+  }
+});
+
+
+////////EXTRA CODE/////////////
+  //
+  // function addMovie(event) {
+  // var target = $(event.target).text();
+  // console.log(target);
+  //
+  // };
