@@ -60,9 +60,36 @@ $(document).ready(function(){
   $('#search' ).click( "click", addMovie);
 
   function addMovie(movies) {
+    event.preventDefault();
+    let inputValue = $("input").val();
+    console.log('inputValue ', inputValue);
+    let omdbApi = 'http://www.omdbapi.com/?s=';
+    //
+    // if(inputValue !== ''){
+    //   console.log('not blank!');
+    //   inputValue = '';
+    // }
+    //
+    // if(inputValue === ''){
+    //   console.log("Please enter a search value");
+    // }
 
-    console.log("clicked");
-    $.getJSON('')
+    let jsonData = $.getJSON(omdbApi + inputValue);
+
+    jsonData.done(function(data){
+      // console.log('running API call');
+      // console.log(data.Search);
+      let results = data.Search; //array like object returned
+      console.log(results);
+      results.push(movies);
+      console.log(movies);
+
+      // for(var i = 0; i < results.length; i++){
+      //   console.log(results[i]);
+      //   console.log(results[i].Title);
+      //   results[i].Title =
+      // }
+    })
   }
 });
 
