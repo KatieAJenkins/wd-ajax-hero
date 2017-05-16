@@ -1,3 +1,4 @@
+'use strict';
 $(document).ready(function(){
   'use strict';
   // console.log('connected');
@@ -79,25 +80,40 @@ $(document).ready(function(){
     jsonData.done(function(data){
       // console.log('running API call');
       // console.log(data.Search);
+      let movieObject = {};
+      let movieArray =[];
       let results = data.Search; //array like object returned
       console.log(results);
-      results.push(movies);
-      console.log(movies);
+      for (var i = 0; i < results.length; i++){
+        console.log(results[i]);
+        // console.log(movies.push(results[i]));
+        // console.log(movies);
+        //build up results movie object
+        // let movieObj = {};
+        // movieObj.title = results[i].Title;
+        // // //poster
+        // movieObj.poster = results[i].Poster;
+        // // //id
+        // movieObj.id = results[i].imdbID;
+        // // //plot
+        // // // movieObj.plot = results[i].plot;
+        // // console.log(movieObj);
+        // // console.log(movies);
+        // console.log(movieArray);
+        // return movieObj;
+      }
+      renderMovies();
+      // movieArray.push(movieObj);
+      // movies.push(movieObj);
+      // console.log(movies);
+      // movies.push(movieObj);
+      // console.log(movies);
 
       // for(var i = 0; i < results.length; i++){
       //   console.log(results[i]);
       //   console.log(results[i].Title);
       //   results[i].Title =
       // }
-    })
+    });
   }
 });
-
-
-////////EXTRA CODE/////////////
-  //
-  // function addMovie(event) {
-  // var target = $(event.target).text();
-  // console.log(target);
-  //
-  // };
