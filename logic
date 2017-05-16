@@ -1,0 +1,9 @@
+//LOGIC
+// - Listen for submissions on the search form. Remember to prevent the default action.
+
+
+// - Validate the user input is not blank.
+// - Clear the previous search results.
+// - Send an HTTP request to the [OMDB API](http://omdbapi.com/) search endpoint.
+// - Handle the HTTP response by pushing a new, well-formed `movie` object into the global `movies` array.
+// - Render the `movies` array to the page by calling the `renderMovies()` function with no arguments.
